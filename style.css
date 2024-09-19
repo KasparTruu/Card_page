@@ -1,0 +1,117 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0e0e0;
+    margin: 0;
+}
+
+.card-container {
+    perspective: 1500px;
+}
+
+.card {
+    width: 400px;
+    height: 250px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-back {
+    background: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transform: rotateY(180deg);
+    position: relative;
+    padding: 20px;
+}
+
+.card img {
+    width: 50px;
+    position: absolute;
+    bottom: 20px; 
+    right: 20px;
+}
+
+.card-numb {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 40px;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.cardholder-name, .expiration-date {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.expiration-date {
+    text-align: right;
+}
+
+.swipe-line {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    border-radius: 4px;
+}
+
+.security-code {
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card-front .chip {
+    width: 50px;
+    position: absolute;
+    right: 20px;
+    top: 50%; 
+    transform: translateY(-50%);
+}
